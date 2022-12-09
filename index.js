@@ -1,4 +1,5 @@
 const express = require("express")
+require("dotenv").config()
 
 const app = express()
 
@@ -9,6 +10,10 @@ app.get("/", (req, res) => {
 
 app.get("/about", (req, res) => {
     res.send("About")
+})
+
+app.get("/getenv", (req, res) => {
+    res.send("The name from env is " + process.env.NAME)
 })
 
 
